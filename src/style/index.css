@@ -1,0 +1,111 @@
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Allow content to fill the screen width */
+.App {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Make main content take up all available width and height */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Ensure proper scrolling behavior */
+.dashboard {
+  min-height: unset;
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.dashboard-content {
+  overflow-y: auto;
+  flex: 1;
+  padding-bottom: 0;
+}
+
+/* Original footer styling */
+.footer {
+  background-color: #111216;
+  color: #d3d8e0;
+  border-top: 1px solid #222530;
+  padding: 16px 0;
+  width: 100%;
+  position: relative;
+  margin-top: auto;
+}
+
+.footer-logo {
+  max-height: 40px;
+  width: auto;
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  color: #d3d8e0;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+  background-color: #e63946;
+  color: white;
+}
+
+/* Ensure zoomed views are still usable */
+@media screen and (zoom: 0.5), 
+       screen and (zoom: 0.6), 
+       screen and (zoom: 0.7),
+       screen and (zoom: 0.8) {
+  html, body, #root, .App {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
+  
+  .dashboard {
+    overflow: hidden;
+  }
+  
+  .dashboard-content {
+    overflow: auto;
+  }
+}

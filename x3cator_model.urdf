@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! -->
+<robot name="x3cator_model">
+
+  <!-- Base Link -->
+  <link name="base_link">
+
+    <inertial>
+      <origin xyz="-0.0068129428236643 0.000911857513887752 -0.210457840549364" rpy="0 0 0" />
+      <mass value="114.248" />
+      <inertia
+        ixx="1.34359757026572"
+        ixy="-0.00102457104712637"
+        ixz="-0.237945102 978319"
+        iyy="7.19905309552309"
+        iyz="-0.00341585895376481"
+        izz="6.76152658394631" />
+    </inertial>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://x3cator_model/meshes/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://x3cator_model/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+
+  </link>
+
+</robot>

@@ -1,0 +1,625 @@
+/* ROS Component Styling - Dark Theme with Red Accents */
+
+/* === Camera Component === */
+.camera-view {
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  position: relative;
+  background-color: var(--secondary);
+  border: 1px solid var(--border-color);
+}
+
+.camera-view img {
+  width: 100%;
+  height: auto;
+  transition: var(--transition);
+  transform-origin: center;
+}
+
+.camera-view:hover img {
+  transform: scale(1.02);
+}
+
+.camera-view::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(transparent 85%, rgba(0, 0, 0, 0.5));
+  z-index: 1;
+  pointer-events: none;
+}
+
+.camera-controls {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 2;
+}
+
+.camera-controls button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(26, 26, 26, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.camera-controls button:hover {
+  background-color: var(--accent);
+  transform: scale(1.1);
+}
+
+.camera-status {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 8px 12px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--text-primary);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  z-index: 2;
+}
+
+.camera-status.online {
+  background-color: rgba(76, 175, 80, 0.3);
+  border: 1px solid rgba(76, 175, 80, 0.5);
+}
+
+.camera-status.offline {
+  background-color: rgba(244, 67, 54, 0.3);
+  border: 1px solid rgba(244, 67, 54, 0.5);
+}
+
+/* === Map Component === */
+.map-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  background-color: var(--secondary);
+  height: 100%;
+  border: 1px solid var(--border-color);
+}
+
+.map-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), transparent);
+  z-index: 1;
+}
+
+.map-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.map-overlay {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.map-control {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(26, 26, 26, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--text-primary);
+}
+
+.map-control:hover {
+  transform: scale(1.1);
+  background-color: var(--accent);
+}
+
+.map-legend {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background-color: rgba(26, 26, 26, 0.7);
+  padding: 10px;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 2;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.legend-color {
+  width: 15px;
+  height: 15px;
+  margin-right: 8px;
+  border-radius: 3px;
+}
+
+/* === Teleoperation Component === */
+.teleop-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.teleop-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(230, 57, 70, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.control-pad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.control-button {
+  aspect-ratio: 1;
+  border-radius: var(--border-radius);
+  background-color: var(--secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.control-button:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  transform: scale(1.05);
+}
+
+.control-button:active {
+  transform: scale(0.95);
+}
+
+.control-button::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.control-button:active::after {
+  opacity: 1;
+}
+
+.speed-control {
+  margin-top: 2rem;
+}
+
+/* Speed slider styles for better visibility in dark theme */
+.speed-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: #2a2a36;
+  border: 1px solid #3a3a46;
+  outline: none;
+  margin: 10px 0;
+}
+
+.speed-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #e63946;
+  box-shadow: 0 0 5px rgba(230, 57, 70, 0.5);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.speed-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  background-color: #ff4a59;
+  box-shadow: 0 0 8px rgba(255, 74, 89, 0.7);
+}
+
+.speed-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 50%;
+  background: #e63946;
+  box-shadow: 0 0 5px rgba(230, 57, 70, 0.5);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.speed-slider::-moz-range-thumb:hover {
+  transform: scale(1.1);
+  background-color: #ff4a59;
+  box-shadow: 0 0 8px rgba(255, 74, 89, 0.7);
+}
+
+.speed-slider::-moz-range-track {
+  height: 8px;
+  border-radius: 4px;
+  background: #2a2a36;
+  border: 1px solid #3a3a46;
+}
+
+/* Speed display styling */
+.speed-display {
+  font-size: 18px;
+  font-weight: 600;
+  color: #e63946;
+  background: rgba(230, 57, 70, 0.1);
+  padding: 2px 10px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+/* === 3D Map Styling === */
+.viewer-3d {
+  position: relative;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--border-color);
+  background-color: var(--secondary);
+}
+
+.viewer-controls {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.viewer-control {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(26, 26, 26, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--text-primary);
+}
+
+.viewer-control:hover {
+  transform: scale(1.1);
+  background-color: var(--accent);
+}
+
+/* === Connection Status === */
+.connection-status {
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.connection-status.connected {
+  background-color: rgba(76, 175, 80, 0.15);
+  color: var(--success);
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.connection-status.disconnected {
+  background-color: rgba(244, 67, 54, 0.15);
+  color: var(--danger);
+  border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+/* Modern Fancy Loader for ROS Components */
+.ros-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 200px;
+}
+
+.loader-rings {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.loader-rings div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+}
+
+.loader-rings div:nth-child(1) {
+  border-top-color: var(--accent);
+}
+
+.loader-rings div:nth-child(2) {
+  border-right-color: var(--text-primary);
+  animation-delay: 0.2s;
+}
+
+.loader-rings div:nth-child(3) {
+  border-bottom-color: var(--accent-hover);
+  animation-delay: 0.4s;
+}
+
+.loader-message {
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+}
+
+/* Data Visualization Elements */
+.data-card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+  transition: var(--transition);
+  height: 100%;
+  border: 1px solid var(--border-color);
+}
+
+.data-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border-color: var(--accent);
+}
+
+.data-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.data-card-title {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.data-card-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.data-card-action {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--secondary);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--text-secondary);
+}
+
+.data-card-action:hover {
+  background-color: var(--accent);
+  color: var(--text-primary);
+}
+
+/* Gas Sensor Component */
+.gas-sensor-container {
+  padding: 1.5rem;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  margin-bottom: 2rem;
+}
+
+.gas-sensor-header {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gas-sensor-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.gas-sensor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.gas-reading {
+  padding: 1.5rem;
+  background-color: var(--secondary);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.gas-reading:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+}
+
+.gas-reading-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.gas-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: rgba(230, 57, 70, 0.1);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.gas-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.gas-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0.5rem 0;
+}
+
+.gas-unit {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.gas-status {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.gas-status.normal {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: var(--success);
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.gas-status.warning {
+  background-color: rgba(255, 152, 0, 0.1);
+  color: var(--warning);
+  border: 1px solid rgba(255, 152, 0, 0.3);
+}
+
+.gas-status.danger {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: var(--danger);
+  border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+/* Chart Styling */
+.chart-container {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: var(--secondary);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.chart-title {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.chart-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.chart-action {
+  padding: 0.4rem 0.75rem;
+  border-radius: 4px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.chart-action:hover {
+  background-color: var(--accent);
+  color: var(--text-primary);
+}
+
+.chart-action.active {
+  background-color: var(--accent);
+  color: var(--text-primary);
+} 

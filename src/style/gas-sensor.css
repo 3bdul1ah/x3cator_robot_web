@@ -1,0 +1,699 @@
+/* Gas Sensor Panel Styles */
+.gas-sensor-container {
+  background-color: var(--bg-card);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.gas-sensor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.realtime-badge {
+  display: flex;
+  align-items: center;
+  background-color: rgba(16, 142, 47, 0.9);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1px solid rgba(74, 222, 128, 0.7);
+  box-shadow: 0 0 10px rgba(74, 222, 128, 0.4);
+  animation: pulse-realtime 2s infinite;
+}
+
+.realtime-badge i {
+  animation: broadcast-pulse 2s infinite;
+  margin-right: 6px;
+}
+
+@keyframes pulse-realtime {
+  0% { 
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
+  }
+  70% { 
+    opacity: 0.9;
+    box-shadow: 0 0 0 10px rgba(74, 222, 128, 0);
+  }
+  100% { 
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+  }
+}
+
+.gas-sensor-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.gas-sensor-title i {
+  color: var(--accent);
+  margin-right: 0.5rem;
+}
+
+.gas-sensor-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.gas-sensor-grid.compact {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0.75rem;
+  flex: 1;
+  width: 100%;
+}
+
+.gas-reading {
+  background-color: var(--bg-card-header);
+  border-radius: var(--border-radius);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.gas-reading:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.gas-reading-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.gas-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+}
+
+.gas-name {
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.gas-value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+  color: var(--text-primary);
+}
+
+.gas-unit {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.gas-status {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  align-self: flex-start;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.gas-status.normal {
+  background-color: rgba(74, 222, 128, 0.1);
+  color: var(--success);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+.gas-status.warning {
+  background-color: rgba(251, 191, 36, 0.1);
+  color: var(--warning);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.gas-status.danger {
+  background-color: rgba(248, 113, 113, 0.1);
+  color: var(--danger);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  animation: pulse-danger 2s infinite;
+}
+
+/* Chart Container */
+.chart-container {
+  background-color: var(--bg-card-header);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.chart-wrapper {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.chart-wrapper canvas {
+  transition: all 0.3s ease;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.chart-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.chart-title i {
+  color: var(--accent);
+}
+
+.chart-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.chart-action {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chart-action:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+.chart-action.active {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* Icon colors */
+.gas-icon.co-icon {
+  background-color: rgba(230, 57, 70, 0.1);
+  color: var(--danger);
+}
+
+.gas-icon.h2s-icon {
+  background-color: rgba(251, 191, 36, 0.1);
+  color: var(--warning);
+}
+
+.gas-icon.o2-icon {
+  background-color: rgba(74, 222, 128, 0.1);
+  color: var(--success);
+}
+
+.gas-icon.ch4-icon {
+  background-color: rgba(96, 165, 250, 0.1);
+  color: var(--info);
+}
+
+/* Compact mode styles */
+.compact-gas-panel {
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.gas-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--bg-card-header);
+  border-radius: var(--border-radius);
+  transition: all 0.2s ease;
+  border: 1px solid var(--border-color);
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+}
+
+.gas-item:hover {
+  transform: translateX(5px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gas-item .gas-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-size: 1.4rem;
+}
+
+.gas-item .gas-icon.co {
+  background-color: rgba(230, 57, 70, 0.1);
+  color: #e63946;
+}
+
+.gas-item .gas-icon.h2s {
+  background-color: rgba(255, 152, 0, 0.1);
+  color: #ff9800;
+}
+
+.gas-item .gas-icon.o2 {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: #4caf50;
+}
+
+.gas-item .gas-icon.ch4 {
+  background-color: rgba(33, 150, 243, 0.1);
+  color: #2196f3;
+}
+
+.gas-item .gas-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gas-item .gas-reading {
+  padding: 0;
+  border: none;
+  background: none;
+  display: flex;
+  align-items: baseline;
+  margin-top: 0.2rem;
+}
+
+.gas-item .gas-reading:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.gas-item .gas-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  margin-right: 5px;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.gas-item .gas-unit {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.gas-status-indicator {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-left: auto;
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+}
+
+.gas-status-indicator.normal {
+  background-color: rgba(74, 222, 128, 0.1);
+  color: var(--success);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+.gas-status-indicator.warning {
+  background-color: rgba(251, 191, 36, 0.1);
+  color: var(--warning);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.gas-status-indicator.danger {
+  background-color: rgba(248, 113, 113, 0.1);
+  color: var(--danger);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  animation: pulse-danger 2s infinite;
+}
+
+/* Make the home panel wrapper look nice */
+.home-gas-panel-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+/* Pulse animations */
+@keyframes pulse-danger {
+  0% {
+    box-shadow: 0 0 0 0 rgba(248, 113, 113, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(248, 113, 113, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(248, 113, 113, 0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .gas-sensor-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .gas-sensor-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .chart-actions {
+    flex-wrap: wrap;
+  }
+}
+
+.gas-range.small {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  margin-top: 0.2rem;
+  opacity: 0.8;
+}
+
+.sensor-model {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 0;
+  width: 100%;
+}
+
+.gas-item .gas-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.gas-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 50px); /* Account for the icon width + margin */
+  overflow: hidden;
+}
+
+/* Level Bar Styles */
+.gas-level-bar {
+  width: 100%;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 10px;
+  position: relative;
+}
+
+.gas-level-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease, background-color 0.5s ease;
+}
+
+.gas-level-container {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.gas-range-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.gas-range {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 5px;
+}
+
+/* Gas Info Container Styles */
+.gas-info-container {
+  background-color: var(--bg-card-header);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  margin-top: 2rem;
+}
+
+.gas-info-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.gas-info-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.gas-info-title i {
+  color: var(--accent);
+  margin-right: 0.5rem;
+}
+
+.gas-info-content {
+  padding: 1.5rem;
+}
+
+.gas-info-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.gas-info-label {
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.gas-info-value {
+  color: var(--text-primary);
+}
+
+.gas-info-value.gas-info-active {
+  color: var(--success);
+  display: flex;
+  align-items: center;
+}
+
+.gas-info-value.gas-info-active::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--success);
+  margin-right: 8px;
+  animation: pulse-active 2s infinite;
+}
+
+.gas-info-divider {
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 1rem 0;
+  opacity: 0.5;
+}
+
+@keyframes pulse-active {
+  0% {
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(74, 222, 128, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+  }
+}
+
+/* In compact mode, make level bar thinner */
+.gas-item .gas-level-bar {
+  height: 6px;
+  margin-top: 5px;
+}
+
+/* No Reading Styles */
+.gas-no-reading {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.gas-no-reading-full {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin: 0.5rem 0;
+}
+
+.no-readings-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
+  border: 1px dashed var(--border-color);
+  margin-bottom: 2rem;
+}
+
+.no-readings-message.compact {
+  height: 100%;
+  margin: 0;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+.no-readings-message i {
+  font-size: 2.5rem;
+  color: var(--warning);
+  margin-bottom: 1rem;
+}
+
+.no-readings-message h4 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.no-readings-message p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.no-readings-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+.no-readings-details {
+  width: 100%;
+  max-width: 600px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  text-align: left;
+}
+
+.no-readings-detail-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.75rem;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.detail-value {
+  font-family: monospace;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  word-break: break-all;
+}
+
+.gas-status.no-reading {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gas-status-indicator.no-reading {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gas-info-value.gas-info-inactive {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+}
+
+.gas-info-value.gas-info-inactive::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--warning);
+  margin-right: 8px;
+} 
