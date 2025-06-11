@@ -105,6 +105,9 @@ const Header = () => {
           <Link to="/monitor" className={`nav-link ${location.pathname === "/monitor" ? 'active' : ''}`}>
             <i className="bi bi-graph-up"></i> Monitor
           </Link>
+          <Link to="/gas-map" className={`nav-link ${location.pathname === "/gas-map" ? 'active' : ''}`}>
+            <i className="bi bi-cloud"></i> Gas Map
+          </Link>
           <div className={`connection-pill ${connected ? 'connected' : 'disconnected'}`}>
             <i className={`bi ${connected ? 'bi-wifi' : 'bi-wifi-off'} status-icon ${connected ? 'connected' : 'disconnected'}`}></i>
             <span>{connected ? 'Connected' : 'Disconnected'}</span>

@@ -1,0 +1,137 @@
+.gas-map-container {
+    padding: 1rem;
+    height: 100%;
+}
+
+.gas-map-card {
+    height: 100%;
+    min-height: 100px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.gas-map-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.gas-map-card .card-header {
+    background-color: var(--bg-card-header);
+    padding: 0.25rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.gas-map-card .card-header h5 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 0.7rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.gas-map-card .card-header h5 i {
+    margin-right: 0.25rem;
+    font-size: 0.8rem;
+}
+
+.gas-map-view {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 80px;
+    background-color: #0a0a0c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.camera-image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0a0a0c;
+}
+
+.camera-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #0a0a0c;
+}
+
+.stream-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 1rem;
+}
+
+.stream-error i {
+    font-size: 2rem;
+    color: var(--warning);
+    margin-bottom: 0.5rem;
+}
+
+.stream-error p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.stream-error small {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.gas-map-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.25rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    font-size: 0.6rem;
+    text-align: center;
+}
+
+.gas-map-description {
+    display: block;
+    padding: 0.15rem 0.25rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .gas-map-card {
+        min-height: 90px;
+    }
+    
+    .gas-map-view {
+        min-height: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gas-map-card {
+        min-height: 80px;
+    }
+    
+    .gas-map-view {
+        min-height: 60px;
+    }
+} 

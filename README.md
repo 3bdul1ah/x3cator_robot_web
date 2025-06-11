@@ -32,8 +32,8 @@ A modern web-based interface for ROS2 (Robot Operating System) visualization and
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/3bdul1ah/x3cator_robot_web.git
-cd x3cator_robot_web
+git clone <repository-url>
+cd ros-web
 ```
 
 2. Install dependencies:
@@ -51,31 +51,15 @@ npm start
 1. Install required ROS2 packages:
 ```bash
 sudo apt-get install ros-humble-rosbridge-suite
+sudo apt-get install ros-humble-tf2-web-republisher
 ```
 
-2. Clone and build tf2_web_republisher:
-```bash
-# Create a workspace if you don't have one
-mkdir -p ~/ros2_ws/src
-cd ~/ros2_ws/src
-
-# Clone the repository
-git clone https://github.com/pac48/tf2_web_republisher.git -b ros2
-
-# Build the package
-cd ~/ros2_ws
-colcon build --packages-select tf2_web_republisher
-
-# Source the workspace
-source ~/ros2_ws/install/setup.bash
-```
-
-3. Launch the ROS2 bridge:
+2. Launch the ROS2 bridge:
 ```bash
 ros2 launch rosbridge_server rosbridge_websocket_launch.xml
 ```
 
-4. Launch the TF2 web republisher:
+3. Launch the TF2 web republisher:
 ```bash
 ros2 launch tf2_web_republisher tf2_web_republisher.launch.py
 ```
@@ -141,6 +125,13 @@ This project relies on several key libraries:
 - [rosbridge_suite](https://github.com/RobotWebTools/rosbridge_suite) - WebSocket interface for ROS2
 - [tf2_web_republisher](https://github.com/pac48/tf2_web_republisher) - TF2 republisher for web visualization
 
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
@@ -153,5 +144,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - [Three.js](https://threejs.org/)
 - [React](https://reactjs.org/)
 - [pac48](https://github.com/pac48) for ROS2 web tools contributions
-
-\\\

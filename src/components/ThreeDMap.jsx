@@ -94,6 +94,39 @@ const ThreeDMap = () => {
         max_pts: 100000,
       });
 
+      // Add Robot Model
+      console.log("Setting up URDF client...");
+      
+      // First check if robot_description parameter exists
+      const robotDescription = new ROSLIB.Param({
+        ros: ros,
+        name: '/robot_description'
+      });
+
+      robotDescription.get((urdf) => {
+        console.log("Robot description received:", urdf ? "Yes" : "No");
+        if (!urdf) {
+          console.error("No URDF found in /robot_description parameter");
+          return;
+        }
+
+        const urdfClient = new ROS3D.UrdfClient({
+          ros: ros,
+          tfClient: tfClient,
+          path: 'http://127.0.0.1:8000/',
+          rootObject: viewer.scene
+        });
+
+        // Add a simple box as fallback if URDF fails
+        const fallbackBox = new ROS3D.Marker({
+          ros: ros,
+          tfClient: tfClient,
+          topic: '/robot_state',
+          rootObject: viewer.scene,
+          color: 0x00ff00
+        });
+      });
+
       // Handle window resize
       const handleResize = () => {
         if (viewerRef.current && existingViewer) {

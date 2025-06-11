@@ -6,6 +6,7 @@ import Map from "./Map";
 import Camera from "./Camera";
 import Control from "./Control";
 import Monitor from "./Monitor";
+import GasMap from "./GasMap";
 
 const Body = () => {
   return (
@@ -17,6 +18,7 @@ const Body = () => {
         <Route path="/camera" element={<Camera isStandalone={true} />} />
         <Route path="/control" element={<Control />} />
         <Route path="/monitor" element={<Monitor />} />
+        <Route path="/gas-map" element={<GasMap />} />
       </Routes>
     </main>
   );

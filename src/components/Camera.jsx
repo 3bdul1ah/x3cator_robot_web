@@ -50,82 +50,82 @@ const Camera = () => {
     };
 
     return (
-        <div className="camera-view">
-            <div className="camera-image-container">
-                <img 
-                    src={`${BACKEND_URL}/stream`} 
-                    alt="Camera Stream"
-                    className="camera-image"
+            <div className="camera-view">
+                <div className="camera-image-container">
+                    <img 
+                        src={`${BACKEND_URL}/stream`} 
+                        alt="Camera Stream"
+                        className="camera-image"
                 />
                 <div className="embedded-controls">
-                    <div className="control-pad">
-                        <button 
-                            className={getButtonClass('t')}
-                            onMouseDown={() => startCommand('6')} 
-                            onMouseUp={stopCommand}
-                        >
-                            <i className="bi bi-arrow-up-left"></i>
-                        </button>
-                        <button 
-                            className={getButtonClass('y')}
-                            onMouseDown={() => startCommand('1')} 
-                            onMouseUp={stopCommand}
-                        >
-                            <i className="bi bi-arrow-up"></i>
-                        </button>
-                        <button 
-                            className={getButtonClass('u')}
-                            onMouseDown={() => startCommand('7')} 
-                            onMouseUp={stopCommand}
-                        >
-                            <i className="bi bi-arrow-up-right"></i>
-                        </button>
+            <div className="control-pad">
+                <button 
+                    className={getButtonClass('t')}
+                    onMouseDown={() => startCommand('6')} 
+                    onMouseUp={stopCommand}
+                >
+                    <i className="bi bi-arrow-up-left"></i>
+                </button>
+                <button 
+                    className={getButtonClass('y')}
+                    onMouseDown={() => startCommand('1')} 
+                    onMouseUp={stopCommand}
+                >
+                    <i className="bi bi-arrow-up"></i>
+                </button>
+                <button 
+                    className={getButtonClass('u')}
+                    onMouseDown={() => startCommand('7')} 
+                    onMouseUp={stopCommand}
+                >
+                    <i className="bi bi-arrow-up-right"></i>
+                </button>
 
-                        <button 
-                            className={getButtonClass('g')}
-                            onMouseDown={() => startCommand('3')} 
-                            onMouseUp={stopCommand}
-                        >
-                            <i className="bi bi-arrow-left"></i>
-                        </button>
-                        <button 
-                            className={getButtonClass('h')}
-                            onClick={stopCommand}
-                        >
-                            <i className="bi bi-stop-fill"></i>
-                        </button>
-                        <button 
-                            className={getButtonClass('j')}
-                            onMouseDown={() => startCommand('4')} 
-                            onMouseUp={stopCommand}
-                        >
-                            <i className="bi bi-arrow-right"></i>
-                        </button>
+                <button 
+                    className={getButtonClass('g')}
+                    onMouseDown={() => startCommand('3')} 
+                    onMouseUp={stopCommand}
+                >
+                    <i className="bi bi-arrow-left"></i>
+                </button>
+                <button 
+                    className={getButtonClass('h')}
+                    onClick={stopCommand}
+                >
+                    <i className="bi bi-stop-fill"></i>
+                </button>
+                <button 
+                    className={getButtonClass('j')}
+                    onMouseDown={() => startCommand('4')} 
+                    onMouseUp={stopCommand}
+                >
+                    <i className="bi bi-arrow-right"></i>
+                </button>
 
-                        <button 
-                            className={getButtonClass('b')}
-                            onMouseDown={() => startCommand('5')} 
-                            onMouseUp={stopCommand}
-                        >
-                            <i className="bi bi-arrow-down-left"></i>
-                        </button>
-                        <button 
-                            className={getButtonClass('n')}
-                            onMouseDown={() => startCommand('2')} 
-                            onMouseUp={stopCommand}
-                        >
-                            <i className="bi bi-arrow-down"></i>
-                        </button>
-                        <button 
-                            className={getButtonClass('m')}
-                            onMouseDown={() => startCommand('8')} 
-                            onMouseUp={stopCommand}
-                        >
-                            <i className="bi bi-arrow-down-right"></i>
-                        </button>
-                    </div>
+                <button 
+                    className={getButtonClass('b')}
+                    onMouseDown={() => startCommand('5')} 
+                    onMouseUp={stopCommand}
+                >
+                    <i className="bi bi-arrow-down-left"></i>
+                </button>
+                <button 
+                    className={getButtonClass('n')}
+                    onMouseDown={() => startCommand('2')} 
+                    onMouseUp={stopCommand}
+                >
+                    <i className="bi bi-arrow-down"></i>
+                </button>
+                <button 
+                    className={getButtonClass('m')}
+                    onMouseDown={() => startCommand('8')} 
+                    onMouseUp={stopCommand}
+                >
+                    <i className="bi bi-arrow-down-right"></i>
+                    </button>
+                                    </div>
                 </div>
-            </div>
+                    </div>
         </div>
     );
 };

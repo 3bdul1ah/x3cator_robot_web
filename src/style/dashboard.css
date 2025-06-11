@@ -141,7 +141,7 @@ body {
   border: 1px solid var(--border-color);
   border-radius: 8px;
   box-shadow: var(--shadow);
-  margin-bottom: 0.75rem; /* Reduced margin */
+  margin-bottom: 0.75rem;
   overflow: hidden;
   height: 100%;
   min-height: var(--min-card-height);
@@ -214,12 +214,16 @@ body {
 
 .card-body {
   flex: 1;
-  padding: 0.75rem; /* Reduced padding */
+  padding: 0.75rem;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-body.p-0 {
   padding: 0;
+  height: 100%;
+  min-height: 300px;
 }
 
 /* Connection status indicator */
@@ -407,7 +411,6 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 300px;
   background-color: #0a0a0c;
   display: flex;
   align-items: center;
@@ -527,6 +530,8 @@ body {
 
 /* 3D Viewer specific styles */
 #viewer {
+  width: 100%;
+  height: 100%;
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -546,12 +551,11 @@ body {
   margin-top: 0.5rem;
 }
 
-/* Environment wrapper for 3D PointCloud */
+/* Environment wrapper */
 .environment-wrapper {
   position: relative;
   width: 100%;
-  height: 220px; /* Fixed height */
-  min-height: auto;
+  height: 100%;
   background-color: #0a0a0c;
   display: flex;
   align-items: center;
@@ -646,15 +650,16 @@ body {
 
 /* Ensure Robot Environment card has appropriate height */
 .robot-environment-card .card-body {
-  min-height: 300px;
-  height: 100%;
+  height: 50px;
+  min-height: 50px;
   display: flex;
   padding: 0;
 }
 
 /* Special environment-3d class for responsive sizing */
 .environment-3d {
-  height: 400px;
+  height: 50px;
+  min-height: 50px;
 }
 
 /* Update emergency stop button to remove animations and effects */
@@ -1072,34 +1077,29 @@ body {
   font-size: 9px;
 }
 
-/* Robot card layout adjustments */
+/* Robot showcase specific styles */
 .robot-showcase {
+  height: 100%;
+  min-height: 300px;
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .robot-image-container {
-  flex: 0 0 auto;
-  margin-right: 20px;
+  height: 100%;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
-}
-
-.robot-image {
-  height: 260px;
-  width: auto;
-  margin-left: -15px;
+  justify-content: space-between;
 }
 
 .robot-info {
-  flex: 1;
+  height: 100%;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  padding-left: 10px;
-  gap: 10px;
+  justify-content: space-between;
 }
 
 /* Teleoperation inside robot card */
@@ -1352,19 +1352,25 @@ body {
 
 /* Camera styles */
 .camera-view {
-  position: relative;
   width: 100%;
   height: 100%;
-  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  border-radius: 6px;
-  background-color: #111216;
+}
+
+.camera-view img,
+.camera-view video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .camera-status {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 50px;
+  right: 50px;
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 0.8rem;
@@ -1399,16 +1405,17 @@ body {
 
 .camera-controls {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 50px;
+  right: 50px;
   display: flex;
-  gap: 6px;
+  gap: 10px;
   z-index: 10;
+  transform: translateY(-20px);
 }
 
 .camera-controls button {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -1712,4 +1719,12 @@ body {
 
 .control-page .velocity-panel {
   margin-top: 15px;
+}
+
+/* Home specific containers */
+.home-camera-container,
+.home-gas-panel-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 } 

@@ -435,18 +435,18 @@ const Home = () => {
             {/* Row 1: X3CATOR-R Robot | Gas Readings */}
             <Col md={6} className="d-flex">
               {/* Robot Showcase */}
-              <Card className="mb-2 w-100">
+              <Card className="mb-2 w-100" style={{ height: '400px' }}>
                 <Card.Header className="py-2">
                   <h5><i className="bi bi-robot me-2"></i>X3CATOR-R Robot</h5>
                 </Card.Header>
-                <Card.Body className="p-2">
+                <Card.Body className="p-2" style={{ height: 'calc(100% - 40px)' }}>
                   <div className="robot-showcase">
                     <div className="robot-image-container">
                       <img 
                         src={robotImage} 
                         alt="X3CATOR-R Firefighter Robot"
                         className="robot-image"
-                        style={{ height: '400px', width: 'auto' }}
+                        style={{ height: '300px', width: 'auto' }}
                       />
                       <button 
                         className="emergency-stop-btn" 
@@ -543,12 +543,12 @@ const Home = () => {
             </Col>
             
             <Col md={6} className="d-flex">
-              {/* Replace the Gas readings panel with GasSensorPanel */}
-              <Card className="mb-2 w-100">
+              {/* Gas Readings */}
+              <Card className="mb-2 w-100" style={{ height: '400px' }}>
                 <Card.Header className="py-2">
                   <h5><i className="bi bi-cloud me-2"></i>Gas Readings</h5>
                 </Card.Header>
-                <Card.Body className="p-0" style={{ flex: '1 1 auto' }}>
+                <Card.Body className="p-0" style={{ height: 'calc(100% - 40px)' }}>
                   <div className="home-gas-panel-wrapper">
                     <GasSensorPanel compact={true} />
                   </div>
@@ -558,8 +558,8 @@ const Home = () => {
             
             {/* Row 2: Camera Feed | Robot Environment */}
             <Col md={6} className="d-flex">
-              {/* Camera Feed replaces Teleoperation */}
-              <Card className="mb-2 w-100">
+              {/* Camera Feed */}
+              <Card className="mb-2 w-100" style={{ height: '400px' }}>
                 <Card.Header className="py-2">
                   <h5><i className="bi bi-camera-video me-2"></i>Camera Feed</h5>
                   <span 
@@ -581,9 +581,9 @@ const Home = () => {
                     <i className="bi bi-arrows-fullscreen"></i>
                   </span>
                 </Card.Header>
-                <Card.Body className="p-0" style={{ flex: '1 1 auto' }}>
-                  <div className="home-camera-container">
-                    <div className="camera-wrapper camera-small">
+                <Card.Body className="p-0" style={{ height: 'calc(100% - 40px)', display: 'flex', flexDirection: 'column' }}>
+                  <div className="home-camera-container" style={{ flex: 1, minHeight: 0 }}>
+                    <div className="camera-wrapper camera-small" style={{ height: '100%' }}>
                       {connected ? (
                         <Camera />
                       ) : (
@@ -600,13 +600,13 @@ const Home = () => {
             </Col>
             
             <Col md={6} className="d-flex">
-              {/* Robot Environment with 3D view only */}
-              <Card className="mb-2 w-100">
+              {/* Robot Environment */}
+              <Card className="mb-2 w-100" style={{ height: '400px' }}>
                 <Card.Header className="py-2">
                   <h5><i className="bi bi-box me-2"></i>Robot Environment</h5>
                 </Card.Header>
-                <Card.Body className="p-0" style={{ flex: '1 1 auto' }}>
-                  <div className="environment-wrapper" style={{ height: '100%' }}>
+                <Card.Body className="p-0" style={{ height: 'calc(100% - 40px)', display: 'flex', flexDirection: 'column' }}>
+                  <div className="environment-wrapper" style={{ flex: 1, minHeight: 0 }}>
                     {connected ? (
                       <ThreeDMap />
                     ) : (
